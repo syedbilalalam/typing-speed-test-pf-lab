@@ -78,9 +78,9 @@ restartBtn.addEventListener("click", function () {
 	time.classList.remove("current");
 	cw.classList.remove("current");
 	time.innerText = timer;
-	timeName.innerText = "Time";
+	timeName.innerText = "TIME";
 	cw.innerText = wordsCorrect;
-	cwName.innerText = "CW";
+	cwName.innerText = "CORRECT WORDS";
 	inputItem.disabled = false;
 	inputItem.value = '';
 	inputItem.focus();
@@ -135,7 +135,7 @@ function displayScore() {
 	cw.classList.add("current");
 
 	time.innerText = percentageAcc + "%";
-	timeName.innerText = "PA";
+	timeName.innerText = "ACCURACY";
 
 	cw.innerText = factor * wordsCorrect;
 	cwName.innerText = "WPM";
