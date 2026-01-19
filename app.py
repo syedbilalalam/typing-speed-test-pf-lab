@@ -48,6 +48,5 @@ def udpate_best_score():
     return 'success'
 
 # The following command will start the backend in debug mode
-# Debug mode se error dhond ne mea aasani hoti hy
 if __name__ == "__main__":
     app.run(debug=True)
