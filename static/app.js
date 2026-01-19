@@ -19,33 +19,12 @@ let factor = 2;
 let seconds;
 let difficulty = 1;
 
+
 //set the color of time and difficulty
 function limitColor(itema, itemr) {
 	itema.classList.add('yellow');
 	itemr.classList.remove('yellow');
 }
-
-//restart the Test
-restartBtn.addEventListener("click", function () {
-
-	wordsSubmitted = 0;
-	wordsCorrect = 0;
-	flag = 0;
-
-	time.classList.remove("current");
-	cw.classList.remove("current");
-	time.innerText = timer;
-	timeName.innerText = "TIME";
-	cw.innerText = wordsCorrect;
-	cwName.innerText = "CORRECT WORDS";
-	inputItem.disabled = false;
-	inputItem.value = '';
-	inputItem.focus();
-
-	displayTest(difficulty);
-	clearInterval(seconds);
-	limitVisible();
-});
 
 //start the timer countdown
 function timeStart() {
@@ -123,6 +102,7 @@ function checkCurrentWord() {
 	}
 
 }
+
 //checks word entered
 function checkWord() {
 	const wordEntered = inputItem.value;
@@ -206,6 +186,7 @@ function randomWords(diff) {
 	return selectedWords;
 }
 
+
 //on Input
 inputItem.addEventListener('input', function (event) {
 	if (flag === 0) {
@@ -220,6 +201,7 @@ inputItem.addEventListener('input', function (event) {
 		checkCurrentWord();
 	}
 });
+
 
 //time selection
 thirty.addEventListener("click", function () {
@@ -245,6 +227,28 @@ pro.addEventListener("click", function () {
 	difficulty = 2;
 	displayTest(difficulty);
 	limitColor(pro, beg);
+});
+
+//restart the Test
+restartBtn.addEventListener("click", function () {
+
+	wordsSubmitted = 0;
+	wordsCorrect = 0;
+	flag = 0;
+
+	time.classList.remove("current");
+	cw.classList.remove("current");
+	time.innerText = timer;
+	timeName.innerText = "TIME";
+	cw.innerText = wordsCorrect;
+	cwName.innerText = "CORRECT WORDS";
+	inputItem.disabled = false;
+	inputItem.value = '';
+	inputItem.focus();
+
+	displayTest(difficulty);
+	clearInterval(seconds);
+	limitVisible();
 });
 
 
