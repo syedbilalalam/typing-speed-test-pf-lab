@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="This Speed Typing Test frontend by BilalCodeTM" />
+
+	<!-- Tab title -->
+	<title>Typing Test</title>
+
+	<!-- Frontend libraries -->
+	<!--Bootstrap 4 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Source+Code+Pro:wght@300;400;700&display=swap"
+		rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+		integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+	<!-- Static files -->
+	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body>
+	<div class="container-fluid box ">
+		<!-- Top options -->
+		<div class="top">
+			<h1 id="heading" class="yellow">Typing Speed Test</h1>
+			<!-- <div class="limits-box">
+				<div class="limit">
+					<a id="thirty" class="yellow" href="#">30s</a>
+					<a id="sixty" href="#">60s</a>
+				</div>
+				<div class="limit">
+					<a id="beg" class="yellow" href="#">beginner</a>
+					<a id="pro" href="#">pro</a>
+				</div>
+
+			</div> -->
+		</div>
+
+		<!-- Highlights container -->
+		<div class="p-3 mt-5 pb-5" style="border: 3px solid #52575d; border-radius: 10px;">
+
+			<!-- Stats area -->
+			<div class="stats center mt-3">
+				<div class="stat-block if">
+					<div id="timeName" class="stat-name yellow if">BEST ACCURACY</div>
+					<div id="time" class="details if ">{{ best_acc }}%</div>
+				</div>
+
+				<div class="stat-block if">
+					<div id="cwName" class="stat-name yellow if">BEST WPM</div>
+					<div id="cw" class="details if">{{ best_wpm }}</div>
+				</div>
+			</div>
+
+			<!-- Test start button -->
+			<div class="restart-button center" style="margin-top: 60px;">
+				<a id="restartBtn" class="p-2" href="{{ url_for('speedtest') }}"
+					style="background-color: #ffd369; color: black; border-radius: 4px;">
+					LET'S START
+				</a>
+			</div>
+		</div>
+
+		<footer class="center yellow" style="position: fixed; left: 0; bottom: 0; width: 100%;">2025 ©
+			<a class="yellow" target="_blank" href="https://github.com/syedbilalalam/">
+				BilalCode<sup>TM</sup>
+			</a>
+		</footer>
+	</div>
+
+
+
+
+
+	<!-- Bootstrap script -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+
+	<!-- App Javascript -->
+	<!-- Wordlist file -->
+	<!-- <script src="{{ url_for('static', filename='words.js') }}"></script> -->
+	<!-- Frontend lgoic -->
+	<!-- <script src="{{ url_for('static', filename='app.js') }}"></script> -->
+</body>
+
+</html>

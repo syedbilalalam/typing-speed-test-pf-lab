@@ -32,7 +32,7 @@ inputItem.addEventListener('input', function (event) {
 		checkWord();
 	}
 	else {
-		currentWord();
+		checkCurrentWord();
 	}
 });
 
@@ -137,12 +137,22 @@ function displayScore() {
 	time.innerText = percentageAcc + "%";
 	timeName.innerText = "ACCURACY";
 
-	cw.innerText = factor * wordsCorrect;
+	const wpm = factor * wordsCorrect;
+	cw.innerText = wpm;
 	cwName.innerText = "WPM";
+
+	// Sending results to the backend
+	const formData = new FormData();
+	formData.set('acc', percentageAcc.toString());
+	formData.set('wpm', wpm.toString());
+	fetch('/update/best/score', {
+		method: 'POST',
+		body: formData
+	});
 }
 
-//check if the user is entering correcrt word
-function currentWord() {
+//check if the user is entering correct word
+function checkCurrentWord() {
 	const wordEntered = inputItem.value;
 	const currentID = "word " + wordNo;
 	const currentSpan = document.getElementById(currentID);
