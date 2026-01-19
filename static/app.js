@@ -19,49 +19,6 @@ let factor = 2;
 let seconds;
 let difficulty = 1;
 
-displayTest(difficulty);
-
-//on Input
-inputItem.addEventListener('input', function (event) {
-	if (flag === 0) {
-		flag = 1;
-		timeStart();
-	}
-	let charEntered = event.data;
-	if (/\s/g.test(charEntered)) {  //check if the character entered is a whitespace
-		checkWord();
-	}
-	else {
-		checkCurrentWord();
-	}
-});
-
-//time selection
-thirty.addEventListener("click", function () {
-	timer = 30;
-	factor = 2;
-	limitColor(thirty, sixty);
-	time.innerText = timer;
-});
-sixty.addEventListener("click", function () {
-	timer = 60;
-	factor = 1;
-	limitColor(sixty, thirty);
-	time.innerText = timer;
-});
-
-//difficulty Selection
-beg.addEventListener("click", function () {
-	difficulty = 1;
-	displayTest(difficulty);
-	limitColor(beg, pro);
-});
-pro.addEventListener("click", function () {
-	difficulty = 2;
-	displayTest(difficulty);
-	limitColor(pro, beg);
-});
-
 //set the color of time and difficulty
 function limitColor(itema, itemr) {
 	itema.classList.add('yellow');
@@ -248,3 +205,48 @@ function randomWords(diff) {
 	}
 	return selectedWords;
 }
+
+//on Input
+inputItem.addEventListener('input', function (event) {
+	if (flag === 0) {
+		flag = 1;
+		timeStart();
+	}
+	let charEntered = event.data;
+	if (/\s/g.test(charEntered)) {  //check if the character entered is a whitespace
+		checkWord();
+	}
+	else {
+		checkCurrentWord();
+	}
+});
+
+//time selection
+thirty.addEventListener("click", function () {
+	timer = 30;
+	factor = 2;
+	limitColor(thirty, sixty);
+	time.innerText = timer;
+});
+sixty.addEventListener("click", function () {
+	timer = 60;
+	factor = 1;
+	limitColor(sixty, thirty);
+	time.innerText = timer;
+});
+
+//difficulty Selection
+beg.addEventListener("click", function () {
+	difficulty = 1;
+	displayTest(difficulty);
+	limitColor(beg, pro);
+});
+pro.addEventListener("click", function () {
+	difficulty = 2;
+	displayTest(difficulty);
+	limitColor(pro, beg);
+});
+
+
+// Display text
+displayTest(difficulty);
