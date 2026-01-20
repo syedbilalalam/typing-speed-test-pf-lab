@@ -124,7 +124,7 @@ function checkWord() {
 
 	if (wordNo > 40) {
 
-		displayTest(difficulty);
+		displayText(difficulty);
 	}
 	else {
 		const nextID = "word " + wordNo;
@@ -153,7 +153,7 @@ function colorSpan(id, color) {
 }
 
 //display the random words on screen
-function displayTest(diff) {
+function displayText(diff) {
 	wordNo = 1;
 	testItem.innerHTML = '';
 
@@ -220,12 +220,12 @@ sixty.addEventListener("click", function () {
 //difficulty Selection
 beg.addEventListener("click", function () {
 	difficulty = 1;
-	displayTest(difficulty);
+	displayText(difficulty);
 	limitColor(beg, pro);
 });
 pro.addEventListener("click", function () {
 	difficulty = 2;
-	displayTest(difficulty);
+	displayText(difficulty);
 	limitColor(pro, beg);
 });
 
@@ -246,11 +246,11 @@ restartBtn.addEventListener("click", function () {
 	inputItem.value = '';
 	inputItem.focus();
 
-	displayTest(difficulty);
+	displayText(difficulty);
 	clearInterval(seconds);
 	limitVisible();
 });
 
 
 // Display text
-displayTest(difficulty);
+displayText(difficulty);
